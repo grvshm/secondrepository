@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+	<reference id="karafService" availability="mandatory" interface="com.gaurav.karaf.model.KarafService" />
+	<bean id="doingServlet" class="com.gaurav.karaf.ui.DoingServlet">
+		<property name="karafService" ref="karafService"></property>
+	</bean>
+	<service ref="doingServlet" interface="javax.servlet.http.HttpServlet">
+		<service-properties>
+			<entry key="alias" value="/karafist" />
+		</service-properties>
+	</service>
+</blueprint>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features
+    xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
+    name="tasklist"
+>
+
+    <feature name="example-karaflist" version="${pom.version}">
+        <feature>example-karaflist-persistence</feature>
+        <feature>example-karaflist-ui</feature>
+    </feature>
+    
+
+    <feature name="example-karaflist-persistence" version="${pom.version}">
+        <bundle>mvn:com.gaurav.karaf/gaurav-karaf-model/${pom.version}</bundle>
+        <bundle>mvn:com.gaurav.karaf/gaurav-karaf-ui/${pom.version}</bundle>
+    </feature>
+
+    <feature name="example-karaflist-ui" version="${pom.version}">
+        <feature>http</feature>
+        <feature>http-whiteboard</feature>
+        <bundle>mvn:com.gaurav.karaf/gaurav-karaf-model/${pom.version}</bundle>
+        <bundle>mvn:com.gaurav.karaf/gaurav-karaf-ui/${pom.version}</bundle>
+    </feature>
+   
+</features>

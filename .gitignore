@@ -1,1 +1,6 @@
 /sftpproject/.metadata/
+.project/
+.settings/
+target/
+.classpath
+.*
